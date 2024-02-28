@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-
+import { RouterModule } from '@angular/router';
 @Component({
     standalone: true,
+    imports: [HomeComponent, RouterModule],
     selector: 'app-root',
     template: `
     <main>
@@ -11,12 +12,11 @@ import { HomeComponent } from './home/home.component';
             alt="logo" aria-hidden="true">
         </header>
         <section class="content">
-            <app-home></app-home>
+            <router-outlet></router-outlet>
         </section>
     </main>
     `,
     styleUrls: ['./app.component.css'],
-    imports: [HomeComponent]
 })
 export class AppComponent {
     title = 'homes';
